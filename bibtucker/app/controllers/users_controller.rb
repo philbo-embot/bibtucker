@@ -1,4 +1,8 @@
+require 'just_visual'
+
+
 class UsersController < ApplicationController
+
 
 	def index
 		@users = User.all
@@ -8,5 +12,11 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 	
-	
+	def create
+		api = JustVisual.new()
+		url =api.unique_url
+
+		p api
+		
+	end
 end
